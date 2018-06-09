@@ -1,24 +1,50 @@
-# README
+# CS_DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+~Example~
 
-Things you may want to cover:
+## membersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
-* Ruby version
+### Association
+- belongs_to :group
+- belongs_to :user
 
-* System dependencies
 
-* Configuration
+## Userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false|
+|name|text|none|
+|image|text|none|
 
-* Database creation
+### Association
+- has_many :group
+- has_many :message
 
-* Database initialization
 
-* How to run the test suite
+## Groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false|
+|groupe_name|text|none|
+|message_id|integer|none|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- has_many :user
+- has_many :message
 
-* Deployment instructions
 
-* ...
+## Messageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null:false|
+|body|text|none|
+|user_id|integer|none|
+|groupe_id|integer|none|
+
+### Association
+- belongs_to :group
+- belongs_to :user
