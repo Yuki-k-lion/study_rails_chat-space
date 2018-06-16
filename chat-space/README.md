@@ -53,3 +53,6 @@
 - Hamlを使って、マークアップ
 - クラスの命名はBEMの命名基礎に従う
 - Sassを使ってスタイルを書く
+
+## Hamlの書き方
+https://qiita.com/watak676/items/525ad3d8a1297e3244e3
