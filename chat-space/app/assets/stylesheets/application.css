@@ -1,0 +1,34 @@
+
+.main .sideBar {
+  background-color: #2f3e51;
+  padding: 0 20px;
+  float: left;
+  width: 300px
+}
+
+.main .sideBar__user {
+  background-color: #253141;
+  padding: 35px 0;
+  margin-bottom: 20px
+}
+
+.main .sideBar__user-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff
+}
+
+.main .sideBar__group {
+  margin-bottom: 40px
+}
+
+.main .sideBar__group-name {
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 5px
+}
+
+.main .sideBar__group-message {
+  font-size: 11px;
+  color: #fff
+}
