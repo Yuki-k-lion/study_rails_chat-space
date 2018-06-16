@@ -1,7 +1,5 @@
 # CS_DB設計
 
-~Example~
-
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -48,3 +46,10 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+# 仕様について
+
+## Viewファイルの作り方
+- Hamlを使って、マークアップ
+- クラスの命名はBEMの命名基礎に従う
+- Sassを使ってスタイルを書く
