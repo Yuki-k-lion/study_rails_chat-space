@@ -1,2 +1,36 @@
 @import "./reset";
 @import "./variable.scss";
+
+.main{
+  .sideBar{
+    background-color: #2f3e51;
+    padding: 0 20px ;
+    float: left;
+    width: 300px;
+      &__user{
+        background-color: #253141;
+        padding: 35px 0;
+        margin-bottom: 20px;
+        &-name{
+          font-size: 16px;
+          font-weight: bold;
+          color: $white-text;
+        }
+      }
+      &__group{
+        margin-bottom: 40px;
+
+        &-name{
+          font-size: 15px;
+          color: $white-text;
+          margin-bottom: 5px;
+
+        }
+        &-message{
+          font-size: 11px;
+          color: $white-text;
+
+        }
+      }
+  }
+}

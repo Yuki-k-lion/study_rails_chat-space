@@ -1,15 +1,17 @@
 %div.container_main
+
   %div.sideBar
     %div.sideBar__user
       %h2.sideBar__user-name
         User Name
-      %i.fa.fa-pencil-square-o
-      %i.fa.fa-cog
-    %div.sideBar_Group
-      %h3.Group-name
+        %i.fa.fa-pencil-square-o
+        %i.fa.fa-cog
+    %div.sideBar__group
+      %h3.sideBar__group-name
         Group Name
-      %p.Group-message
+      %p.sideBar__group-message
         Latest message
+
   %content.main_body
     %div.info
       %h2.info__name
@@ -18,6 +20,7 @@
         Member List
       %a.info_edit-btn
         Edit
+
     %div.textArea
       %h3.textArea_Name
         User Name
@@ -25,6 +28,7 @@
         2018/05/20 18:00
       %p.textArea_message
         Sample Message
+
     %div.sendMessage
       %div.sendMessage__input
         %div.sendMessage__input-text
