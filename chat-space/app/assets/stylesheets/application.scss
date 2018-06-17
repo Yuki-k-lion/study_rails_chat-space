@@ -7,7 +7,8 @@
     clear: both;
 }
 
-html,body {height:100%;}
+//html,body {height:100%;}
+
 .main{
 
   //sideBarについての記述
@@ -114,7 +115,7 @@ html,body {height:100%;}
     width: 100%;
     padding: 0 40px;
     padding-top: 6px;
-    height: calc(100% - 96px);
+    height: calc(100% - 186px);
     &__user{
       margin: 40px auto;
     }
@@ -133,6 +134,48 @@ html,body {height:100%;}
   }
   //end of textArea
 
+  //start od sendMessage
+  .sendMessage{
+    width: 100%;
+    padding: 20px 40px;
+    //height: 50px;
+    //background-color: #e3f345;テスト用
+    background-color: #ddd;
+
+    &__input{
+      //margin: 20px 0;
+      line-height: 50px;
+      //background-color: #e3f345;
+
+      &-text{
+        background-color: #fff;
+        color: #434a54;
+        font-size: 16px;
+        padding: 0 10px;
+        width: calc(100% - 115px);
+
+      }
+      &-btn{
+        display: inline-block;
+        padding-right: 20px;
+        padding-left: 20px;
+        // line-height: 40px;
+        // font-size: 14px;
+        color: $white-text;
+        background-color: #38aff0;
+
+      }
+    }
+    &__float{
+      &-left{
+        float: left;
+      }
+      &-right{
+        float: right;
+      }
+    }
+  }
+  //end of sendMessage
 //end of main_body
 
 }
