@@ -5,14 +5,15 @@ html,body {height:100%;}
 .main{
   .sideBar{
     background-color: #2f3e51;
-    padding: 0 20px ;
+    // padding: 0 20px ;
     float: left;
     width: 300px;
-    height: 1000px;
+    height: 100vh;
+    //vh vwという単位を使うと view に対して何パーセントの幅かを決定できる。
 
       &__user{
         background-color: #253141;
-        padding: 35px 0;
+        padding: 35px 20px;
         margin-bottom: 20px;
         &-name{
           font-size: 16px;
@@ -21,6 +22,7 @@ html,body {height:100%;}
         }
       }
       &__group{
+        padding: 0 20px ;
         margin-bottom: 40px;
 
         &-name{
