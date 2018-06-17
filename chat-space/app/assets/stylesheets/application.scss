@@ -59,7 +59,7 @@ html,body {height:100%;}
   //infoについての記述
     .info{
       height: 96px;
-      width: 100%;
+      // width: 100%;
       padding: 0 40px;
       border-bottom: 1px solid #eee;
 
@@ -106,6 +106,33 @@ html,body {height:100%;}
 
   //end of info
 }
+
+  //start of textArea
+  .textArea{
+    background-color: #fafafa;
+    //#aaaだったけどここのカラーコード間違っている気がする。
+    width: 100%;
+    padding: 0 40px;
+    padding-top: 6px;
+    height: calc(100% - 96px);
+    &__user{
+      margin: 40px auto;
+    }
+    &__name{
+      font-size: 16px;
+      color: #434a54;
+    }
+    &__timestamp{
+      font-size: 12px;
+      color: #999;
+    }
+    &__message{
+      font-size: 14px;
+      color: #434a54;
+    }
+  }
+  //end of textArea
+
 //end of main_body
 
 }
