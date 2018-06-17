@@ -1,8 +1,16 @@
 @import "./reset";
 @import "./variable.scss";
 
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
 html,body {height:100%;}
 .main{
+
+  //sideBarについての記述
   .sideBar{
     background-color: #2f3e51;
     // padding: 0 20px ;
@@ -38,4 +46,66 @@ html,body {height:100%;}
         }
       }
   }
+//end of sideBar
+
+//main_bodyについての記述
+.main_body{
+  float: left;
+
+  position: relative;
+  height: 100vh;
+  width: calc(100% - 300px);
+  //width: 100%;
+  //infoについての記述
+    .info{
+      height: 96px;
+      width: 100%;
+      padding: 0 40px;
+      border-bottom: 1px solid #eee;
+
+      &__name{
+        //高さ50px,文字サイズ20px,余白上下15px;
+        margin-top: 20px;
+        font-size: 20px;
+        color: $text;
+        line-height: 50px;
+        letter-spacing: 2px;
+        font-weight: 400;
+      }
+      &__members{
+        //margin: 15px 0;
+        font-size: 12px;
+        line-height: 20px;
+        color: #999;
+      }
+
+      &__edit{
+
+        &-btn{
+          display: inline-block;
+          margin: 28px 0;
+          padding-right: 20px;
+          padding-left: 20px;
+          line-height: 40px;
+          font-size: 14px;
+          color: #38aff0;
+          border: 2px solid #38aff0;
+
+        }
+      }
+      &__float{
+        &-left{
+          float: left;
+        }
+        &-right{
+          float: right;
+        }
+      }
+
+    }
+
+  //end of info
+}
+//end of main_body
+
 }
