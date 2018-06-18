@@ -3,13 +3,7 @@
 //@import "font-awesome";
 @import "./sidebar.scss";
 @import "./message.scss";
-
+@import "./base.scss";
 /*
  *= require font-awesome
  */
-
-.clearfix:after {
-    content: "";
-    display: block;
-    clear: both;
-}
