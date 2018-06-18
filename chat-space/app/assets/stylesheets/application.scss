@@ -1,5 +1,7 @@
 @import "./reset";
 @import "./variable.scss";
+//@import "font-awesome";
+
 /*
  *= require font-awesome
  */
@@ -118,7 +120,7 @@
     width: calc(100% - 80px);
     padding: 0 40px;
     padding-top: 6px;
-    height: calc(100% - 186px);
+    height: calc(100% - 192px);
     &__user{
       margin: 40px auto;
     }
