@@ -17,9 +17,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|index:true,null:false,unique:true|
+|name|string|index:true, null:false, unique:true|
 |image|string|none|
-|email|string|null:false,index:true|
+|email|string|null:false, index:true|
 
 ### Association
 - has_many :groups, through :members
@@ -29,8 +29,8 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupe_name|string|null:false,unique:ture,index:true|
-|message_id|references|unique:ture|
+|group_name|string|null:false, unique:true, index:true|
+|message_id|references|unique:true|
 
 ### Association
 - has_many :users, through :members
@@ -42,7 +42,7 @@
 |------|----|-------|
 |body|string|index:true|
 |user_id|references|null:false|
-|groupe_id|references|null:false|
+|group_id|references|null:false|
 
 ### Association
 - belongs_to :group
