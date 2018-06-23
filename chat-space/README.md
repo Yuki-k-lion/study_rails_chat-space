@@ -29,7 +29,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false, unique:true, index:true|
-|message_id|references|unique:true|
 
 ### Association
 - has_many :messages
