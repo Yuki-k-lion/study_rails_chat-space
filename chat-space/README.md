@@ -18,7 +18,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index:true, null:false, unique:true|
-|image|string|none|
 |email|string|null:false, index:true|
 
 ### Association
