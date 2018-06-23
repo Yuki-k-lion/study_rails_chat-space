@@ -6,8 +6,8 @@
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -30,7 +30,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |groupe_name|string|null:false,unique:ture,index:true|
-|message_id|integer|unique:ture|
+|message_id|references|unique:ture|
 
 ### Association
 - has_many :users, through :members
@@ -41,8 +41,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |body|string|index:true|
-|user_id|integer|null:false|
-|groupe_id|integer|null:false|
+|user_id|references|null:false|
+|groupe_id|references|null:false|
 
 ### Association
 - belongs_to :group
