@@ -28,7 +28,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null:false, unique:true, index:true|
+|name|string|null:false, unique:true, index:true|
 |message_id|references|unique:true|
 
 ### Association
