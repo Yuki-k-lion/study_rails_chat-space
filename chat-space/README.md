@@ -40,7 +40,7 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|string|index:true|
+|body|string||
 |image|string||
 |user_id|references|null:false|
 |group_id|references|null:false|
