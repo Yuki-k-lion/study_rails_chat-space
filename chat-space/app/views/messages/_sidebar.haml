@@ -2,10 +2,13 @@
   .sideBar__user
     %h2.sideBar__user-name
       User Name
-      = fa_icon 'fa-pencil-square-o'
-      = fa_icon 'fa-cog'
-  .sideBar__group
-    %h3.sideBar__group-name
-      Group Name
-    %p.sideBar__group-message
-      Latest message
+      = link_to '#'
+        = fa_icon 'fa-pencil-square-o'
+      = link_to '#'
+        = fa_icon 'fa-cog'
+  = link_to '#'
+    .sideBar__group
+      %h3.sideBar__group-name
+        Group Name
+      %p.sideBar__group-message
+        Latest message
