@@ -29,7 +29,6 @@
 ## Groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null:false|
 |groupe_name|string|null:false,unique:ture,index:true|
 |message_id|integer|unique:ture|
 
