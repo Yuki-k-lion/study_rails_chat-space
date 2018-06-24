@@ -1,4 +1,4 @@
-%.main
+.main
 
   = render 'sidebar'
 
@@ -26,8 +26,8 @@
         .sendMessage__input-text.sendMessage__float-left
           %p
             入力してちょ
-            = link_to "#", #
+            = link_to "#" do
               = fa_icon 'fa-image'
-          = link_to '#'
+            = link_to '#'
             .sendMessage__input-btn.sendMessage__float-right
               Send
