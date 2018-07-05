@@ -2,10 +2,11 @@
   .sideBar__user
     %h2.sideBar__user-name
       User Name
-      = link_to '#' do
-        = fa_icon 'fa-pencil-square-o'
-      = link_to '#' do
-        = fa_icon 'fa-cog'
+      %li.list
+        = link_to '#' do
+          %i.fa.icon.fa-pencil-square-o.
+        = link_to '#' do
+          %i.fa.icon.fa-cog
   = link_to '#' do
     .sideBar__group
       %h3.sideBar__group-name
