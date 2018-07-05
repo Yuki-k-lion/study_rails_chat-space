@@ -58,6 +58,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'font-awesome-rails'
 
+
 # 開発環境にのみ必要
 group :development do
      gem 'rspec'
