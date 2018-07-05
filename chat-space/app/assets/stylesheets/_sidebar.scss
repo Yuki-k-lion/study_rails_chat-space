@@ -34,17 +34,18 @@
 
         }
       }
-      .header{
-        &__lists
+
+      &__lists{
         display: inline-block;
         float: right;
-          .lists{
-            display: inline-block;
-          }
-          .icon{
-            color: #fff;
-            font-size: 16px;
-          }
+        .lists{
+          list-style: none;
+        }
+        .icon{
+          color: #fff;
+          font-size: 16px;
+        }
       }
+
   }
 }
