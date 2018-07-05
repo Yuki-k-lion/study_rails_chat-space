@@ -7,7 +7,6 @@
     width: 300px;
     height: 100vh;
     //vh vwという単位を使うと view に対して何パーセントの幅かを決定できる。
-
       &__user{
         background-color: #253141;
         padding: 35px 20px;
@@ -17,35 +16,31 @@
           font-weight: bold;
           color: $white-text;
         }
+        &-lists{
+          display: inline-block;
+          float: right;
+          .list{
+            list-style: none;
+            display: inline-block;
+          }
+          .icon{
+            color: #fff;
+            font-size: 16px;
+          }
+        }
       }
       &__group{
         padding: 0 20px ;
         margin-bottom: 40px;
-
         &-name{
           font-size: 15px;
           color: $white-text;
           margin-bottom: 5px;
-
         }
         &-message{
           font-size: 11px;
           color: $white-text;
-
         }
       }
-
-      &__lists{
-        display: inline-block;
-        float: right;
-        .lists{
-          list-style: none;
-        }
-        .icon{
-          color: #fff;
-          font-size: 16px;
-        }
-      }
-
   }
 }
