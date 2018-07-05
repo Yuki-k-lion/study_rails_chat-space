@@ -22,12 +22,9 @@
           Sample Message
 
     .sendMessage.clearfix
-      .sendMessage__input
-        .sendMessage__input-text.sendMessage__float-left
-          %p
-            入力してちょ
+      %form.sendMessage__input
+        %input.sendMessage__input-text.sendMessage__float-left
+          .sendMessage__input-icon
             = link_to "#" do
-              = fa_icon 'fa-image'
-            = link_to '#'
-            .sendMessage__input-btn.sendMessage__float-right
-              Send
+              %i.fa.icon.fa-image
+        %input.sendMessage__input-btn.sendMessage__float-right{type:"submit",value:"Send"}
