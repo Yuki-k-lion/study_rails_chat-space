@@ -1,0 +1,30 @@
+.main
+
+  = render 'sidebar'
+
+  %content.main_body.clearfix
+    .info.clearfix
+      .info__group.info__float-left
+        %h2.info__name
+          Name Name
+        %p.info__members
+          Member List
+      %a.info__edit-btn.info__float-right
+        Edit
+
+    .textArea
+      .textArea__user
+        %h3.textArea__name
+          User Name
+          %span.textArea__timestamp
+            2018/05/20 18:00
+        %p.textArea__message
+          Sample Message
+
+    .sendMessage.clearfix
+      %form.sendMessage__input
+        %input.sendMessage__input-text.sendMessage__float-left
+          .sendMessage__input-icon
+            = link_to "#" do
+              %i.fa.icon.fa-image
+        %input.sendMessage__input-btn.sendMessage__float-right{type:"submit",value:"Send"}
