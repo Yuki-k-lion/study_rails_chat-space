@@ -1,0 +1,17 @@
+.sideBar
+  .sideBar__user
+    %h2.sideBar__user-name
+      User Name
+      %ul.sideBar__user-lists
+        %li.list
+          = link_to '#' do
+            %i.fa.icon.fa-pencil-square-o
+        %li.list
+          = link_to '#' do
+            %i.fa.icon.fa-cog
+  = link_to '#' do
+    .sideBar__group
+      %h3.sideBar__group-name
+        Group Name
+      %p.sideBar__group-message
+        Latest message
