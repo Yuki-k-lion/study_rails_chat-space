@@ -1,48 +1,133 @@
 .main{
 
-//main_bodyについての記述
-.main_body{
-  float: left;
+  //main_bodyについての記述
+  &_body{
+    float: left;
+    position: relative;
+    height: 100vh;
+    width: calc(100% - 300px);
+    //width: 100%;
+    //infoについての記述
+      .info{
+        height: 96px;
+        // width: 100%;
+        padding: 0 40px;
+        border-bottom: 1px solid #eee;
 
-  position: relative;
-  height: 100vh;
-  width: calc(100% - 300px);
-  //width: 100%;
-  //infoについての記述
-    .info{
-      height: 96px;
-      // width: 100%;
-      padding: 0 40px;
-      border-bottom: 1px solid #eee;
+        &__name{
+          //高さ50px,文字サイズ20px,余白上下15px;
+          margin-top: 20px;
+          font-size: 20px;
+          color: $text;
+          line-height: 50px;
+          letter-spacing: 2px;
+          font-weight: 400;
+        }
+        &__members{
+          //margin: 15px 0;
+          font-size: 12px;
+          line-height: 20px;
+          color: #999;
+        }
 
-      &__name{
-        //高さ50px,文字サイズ20px,余白上下15px;
-        margin-top: 20px;
-        font-size: 20px;
-        color: $text;
-        line-height: 50px;
-        letter-spacing: 2px;
-        font-weight: 400;
+        &__edit{
+
+          &-btn{
+            display: inline-block;
+            margin: 28px 0;
+            padding-right: 20px;
+            padding-left: 20px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #38aff0;
+            border: 2px solid #38aff0;
+
+          }
+        }
+        &__float{
+          &-left{
+            float: left;
+          }
+          &-right{
+            float: right;
+          }
+        }
+
       }
-      &__members{
-        //margin: 15px 0;
+
+    //end of info
+  }
+
+    //start of textArea
+    .textArea{
+      background-color: #fafafa;
+      //#aaaだったけどここのカラーコード間違っている気がする。
+      width: calc(100% - 80px);
+      padding: 0 40px;
+      padding-top: 6px;
+      height: calc(100% - 192px);
+      &__user{
+        margin: 40px auto;
+      }
+      &__name{
+        font-size: 16px;
+        color: #434a54;
+      }
+      &__timestamp{
         font-size: 12px;
-        line-height: 20px;
         color: #999;
       }
+      &__message{
+        font-size: 14px;
+        color: #434a54;
+      }
+    }
+    //end of textArea
 
-      &__edit{
+    //start od sendMessage
+    .sendMessage{
+      width: calc(100% - 80px);
+      padding: 20px 40px;
+      //height: 50px;
+      //background-color: #e3f345;テスト用
+      background-color: #ddd;
 
+      &__input{
+        //margin: 20px 0;
+        line-height: 50px;
+        //background-color: #e3f345;
+
+        &-text{
+          background-color: #fff;
+          color: #434a54;
+          font-size: 16px;
+          border: none;
+          box-sizing: border-box;
+          float: left;
+          height: 50px;
+          padding: 0 10px;
+          width: calc(100% - 150px)
+        }
+        &-icon{
+          font-size: 16px;
+          background-color: #fff;
+          float: left;
+          height: 50px;
+          padding-right: 10px;
+            .icon{
+              color: #333;
+            }
+        }
         &-btn{
           display: inline-block;
-          margin: 28px 0;
-          padding-right: 20px;
-          padding-left: 20px;
-          line-height: 40px;
-          font-size: 14px;
-          color: #38aff0;
-          border: 2px solid #38aff0;
-
+          font-size: 16px;
+          color: $white-text;
+          background-color: #38aff0;
+          border: none;
+          float: right;
+          height: 50px;
+          margin-left: 15px;
+          padding: 0 30px;
         }
       }
       &__float{
@@ -53,93 +138,7 @@
           float: right;
         }
       }
-
     }
-
-  //end of info
-}
-
-  //start of textArea
-  .textArea{
-    background-color: #fafafa;
-    //#aaaだったけどここのカラーコード間違っている気がする。
-    width: calc(100% - 80px);
-    padding: 0 40px;
-    padding-top: 6px;
-    height: calc(100% - 192px);
-    &__user{
-      margin: 40px auto;
-    }
-    &__name{
-      font-size: 16px;
-      color: #434a54;
-    }
-    &__timestamp{
-      font-size: 12px;
-      color: #999;
-    }
-    &__message{
-      font-size: 14px;
-      color: #434a54;
-    }
-  }
-  //end of textArea
-
-  //start od sendMessage
-  .sendMessage{
-    width: calc(100% - 80px);
-    padding: 20px 40px;
-    //height: 50px;
-    //background-color: #e3f345;テスト用
-    background-color: #ddd;
-
-    &__input{
-      //margin: 20px 0;
-      line-height: 50px;
-      //background-color: #e3f345;
-
-      &-text{
-        background-color: #fff;
-        color: #434a54;
-        font-size: 16px;
-        border: none;
-        box-sizing: border-box;
-        float: left;
-        height: 50px;
-        padding: 0 10px;
-        width: calc(100% - 150px)
-      }
-      &-icon{
-        font-size: 16px;
-        background-color: #fff;
-        float: left;
-        height: 50px;
-        padding-right: 10px;
-          .icon{
-            color: #333;
-          }
-      }
-      &-btn{
-        display: inline-block;
-        font-size: 16px;
-        color: $white-text;
-        background-color: #38aff0;
-        border: none;
-        float: right;
-        height: 50px;
-        margin-left: 15px;
-        padding: 0 30px;
-      }
-    }
-    &__float{
-      &-left{
-        float: left;
-      }
-      &-right{
-        float: right;
-      }
-    }
-  }
-  //end of sendMessage
-//end of main_body
+    //end of sendMessage
+  //end of main_body
 }
