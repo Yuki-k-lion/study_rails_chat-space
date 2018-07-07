@@ -1,49 +1,50 @@
 # CS_DB設計
+#programming/tech-camp
 
 ~Example~
 
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
 
 
-## Userテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null:false|
-|name|text|none|
-|image|text|none|
+|name|string|index:true, null:false, unique:true|
+|email|string|null:false, index:true|
 
 ### Association
-- has_many :group
-- has_many :message
+- has_many :members
+- has_many :groups, through: :members
+- has_many :messages
 
 
-## Groupテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null:false|
-|groupe_name|text|none|
-|message_id|integer|none|
+|name|string|null:false, unique:true|
 
 ### Association
-- has_many :user
-- has_many :message
+- has_many :messages
+- has_many :members
+- has_many :users, through: :members
 
 
-## Messageテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null:false|
-|body|text|none|
-|user_id|integer|none|
-|groupe_id|integer|none|
+|body|string||
+|image|string||
+|user_id|references|null:false|
+|group_id|references|null:false|
+
 
 ### Association
 - belongs_to :group
