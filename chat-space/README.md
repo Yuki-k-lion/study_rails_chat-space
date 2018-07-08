@@ -18,7 +18,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|index:true, null:false, unique:true|
-|email|string|null:false, index:true|
 
 ### Association
 - has_many :members
