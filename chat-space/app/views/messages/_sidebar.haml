@@ -1,7 +1,7 @@
 .sideBar
   .sideBar__user
     %h2.sideBar__user-name
-      User Name
+      = current_user.name
       %ul.sideBar__user-lists
         %li.list
           = link_to '#' do
