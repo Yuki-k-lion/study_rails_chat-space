@@ -9,12 +9,11 @@
         %li.list
           = link_to edit_user_path(current_user) do
             %i.fa.icon.fa-cog
-  .groups
+  .sideBar__groups
     - current_user.groups.each do |g|
-      .group
+      .sideBar__group
         = link_to '#' do
-          .sideBar__group
-            %h3.sideBar__group-name
-              g.name
-            %p.sideBar__group-message
-              Latest message
+          %h3.sideBar__group-name
+            g.name
+          %p.sideBar__group-message
+            Latest message
