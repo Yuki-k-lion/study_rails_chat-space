@@ -10,8 +10,8 @@
           = link_to edit_user_path(current_user) do
             %i.fa.icon.fa-cog
   .groups
-    .group
-      - current_user.groups.each do |g|
+    - current_user.groups.each do |g|
+      .group
         = link_to group_messages_path(group) do
           .sideBar__group
             %h3.sideBar__group-name
