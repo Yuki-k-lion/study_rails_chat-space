@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
 
  def update
    if @group.update(group_params)
-     redirect_to root_path(@group), notice 'edit the group'
+     redirect_to root_path(@group), notice: 'edit the group'
    else
      render :edit
    end
