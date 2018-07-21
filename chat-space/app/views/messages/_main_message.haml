@@ -18,9 +18,10 @@
         Sample Message
 
   .sendMessage.clearfix
-    %form.sendMessage__input
-      %input.sendMessage__input-text.sendMessage__float-left
-        .sendMessage__input-icon
-          = link_to "#" do
+    =form_for [@group, @message] do |f|, class: 'sendMessage__input'
+      = f.text_field :content, class: 'sendMessage__input-text sendMessage__float-left',placeholder: 'type a message'
+        .sendMessage__input-icon.
+          = f.label :image, class: 'sendMessage__mask__image' do
             %i.fa.icon.fa-image
-      %input.sendMessage__input-btn.sendMessage__float-right{type:"submit",value:"Send"}
+            = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'sendMessage__input-btn sendMessage__float-right'
