@@ -1,4 +1,8 @@
 class GroupsController < ApplicationController
+
+  def new
+  end
+
   def create
    @group = Group.new(group_params)
    if @group.save
@@ -7,5 +11,11 @@ class GroupsController < ApplicationController
      flash.now[:alert] = "グループ名を入力してください"
      render :new
    end
+ end
+
+ def edit
+ end
+
+ def update
  end
 end
