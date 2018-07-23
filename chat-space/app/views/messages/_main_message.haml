@@ -7,15 +7,7 @@
         Member List
     %a.info__edit-btn.info__float-right
       Edit
-
-  .textArea
-    .textArea__user
-      %h3.textArea__name
-        User Name
-        %span.textArea__timestamp
-          2018/05/20 18:00
-      %p.textArea__message
-        Sample Message
+  = render @messages
 
   .sendMessage.clearfix
     =form_for [@group, @message] do |f|, class: 'sendMessage__input'
