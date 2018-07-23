@@ -2,9 +2,10 @@
   .info.clearfix
     .info__group.info__float-left
       %h2.info__name
-        Name Name
-      %p.info__members
-        Member List
+        = @group.name
+      - @group.members.each do |g|
+        %p.info__members
+          @group.members.name
     %a.info__edit-btn.info__float-right
       Edit
   = render @messages
