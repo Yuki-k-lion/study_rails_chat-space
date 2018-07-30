@@ -66,6 +66,7 @@ gem 'rspec-rails'
 group :development do
      gem 'rspec'
      gem 'web-console', '~> 2.0'
+     gem 'factory_girl_rails', "~> 4.4.1"
 end
 
 # テスト環境にのみ必要
