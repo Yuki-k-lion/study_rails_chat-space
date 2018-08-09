@@ -62,7 +62,7 @@ gem 'mini_magick'
 # gem 'rspec-rails'
 
 #開発およびテスト環境に必要
-group :develpoment :test do
+group :develpoment, :test do
   gem 'faker'
   gem 'rspec'
   gem 'factory_girl_rails', "~> 4.4.1"
@@ -76,7 +76,7 @@ end
 # テスト環境にのみ必要
 group :test do
      gem 'rspec-rails', '~> 3.5'
-     gem 'rails-controller-testing' 
+     gem 'rails-controller-testing'
 end
 
 # 本番環境にのみ必要
