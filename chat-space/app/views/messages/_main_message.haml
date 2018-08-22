@@ -11,7 +11,7 @@
   = render @messages
 
   .sendMessage.clearfix
-    =form_for [@group, @message], html: {class: 'sendMessage__input', id: "new_message"} do |f|
+    = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'sendMessage__input-text sendMessage__float-left textbox',placeholder: 'type a message'
         .sendMessage__input-icon
           = f.label :image, class: 'sendMessage__mask__image'
