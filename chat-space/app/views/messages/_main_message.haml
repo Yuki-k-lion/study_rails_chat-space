@@ -13,7 +13,7 @@
   .sendMessage.clearfix
     =form_for [@group, @message] do |f|, class: 'sendMessage__input',id: "new_message"
       = f.text_field :content, class: 'sendMessage__input-text sendMessage__float-left textbox',placeholder: 'type a message'
-        .sendMessage__input-icon.
+        .sendMessage__input-icon
           = f.label :image, class: 'sendMessage__mask__image' do
             %i.fa.icon.fa-image
             = f.file_field :image, class: 'hidden'
