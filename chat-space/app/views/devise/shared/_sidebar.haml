@@ -14,6 +14,6 @@
       .sideBar__group
         = link_to group_messages_path(g.id) do
           %h3.sideBar__group-name
-            g.name
+            = g.name
           %p.sideBar__group-message
-            g.show_latest_message
+            = g.show_latest_message

@@ -5,7 +5,7 @@
         = @group.name
       - @group.members.each do |g|
         %p.info__members
-          @group.members.name
+          = @group.members.name
     %a.info__edit-btn.info__float-right
       Edit
   = render @messages
