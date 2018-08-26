@@ -2,11 +2,11 @@
   .textArea
     .textArea__user
       %h3.textArea__name
-        m.user.name
+        = m.user.name
         %span.textArea__timestamp
-          m.created_at
+          = m.created_at
       - if m.content.present?
         %p.textArea__message
-          m.content
+          = m.content
       - if m.image.present?
         = image_tag m.image.url, class: 'textArea__image'
