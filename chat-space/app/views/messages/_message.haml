@@ -1,12 +1,11 @@
-- @messages.each do |m|
-  .textArea
-    .textArea__user
-      %h3.textArea__name
-        = m.user.name
-        %span.textArea__timestamp
-          = m.created_at
-      - if m.content.present?
-        %p.textArea__message
-          = m.content
-      - if m.image.present?
-        = image_tag m.image.url, class: 'textArea__image'
+.textArea_box
+  .textArea__user
+    %h3.textArea__name
+      = message.user.name
+      %span.textArea__timestamp
+        = message.created_at
+    - if message.content.present?
+      %p.textArea__message
+        = message.content
+    - if message.image.present?
+      = image_tag message.image.url, class: 'textArea__image'

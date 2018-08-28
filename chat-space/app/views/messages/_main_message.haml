@@ -8,7 +8,8 @@
           = @group.members.name
     %a.info__edit-btn.info__float-right
       Edit
-  = render @messages
+  .textArea
+    = render @messages, collection: @messages, as: :message
 
   .sendMessage.clearfix
     = form_for [@group, @message] do |f|
