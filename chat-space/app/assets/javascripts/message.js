@@ -24,7 +24,8 @@ $(function() {
         .done(function(data) {
           var html = buildHTML(data);
           $('.messages').append(html)
-          $('.textbox').val('')
+          // $('.textbox').val('')
+          $('.textbox').reset();
         });
         .fail(function(){
           alert('error');
