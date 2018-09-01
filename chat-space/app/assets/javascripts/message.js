@@ -21,14 +21,15 @@ $(function() {
           contentType: false
         });
 
-        .done(function(data) {
+        done(function(data) {
           var html = buildHTML(data);
           $('.messages').append(html)
           // $('.textbox').val('')
           $('.textbox').reset();
         });
-        .fail(function(){
+        fail(function(){
           alert('error');
         });
 
       })
+}
