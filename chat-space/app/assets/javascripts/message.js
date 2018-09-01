@@ -31,5 +31,5 @@ $(function() {
           alert('error');
         });
 
-      })
+      });
 }
