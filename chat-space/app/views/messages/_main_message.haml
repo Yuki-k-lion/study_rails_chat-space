@@ -5,7 +5,7 @@
         = @group.name
       - @group.members.each do |member|
         %p.info__members
-          = member.name
+          = member.user.name
     %a.info__edit-btn.info__float-right
       Edit
   .textArea
