@@ -3,9 +3,9 @@
     .info__group.info__float-left
       %h2.info__name
         = @group.name
-      - @group.members.each do |g|
+      - @group.members.each do |member|
         %p.info__members
-          = @group.members.name
+          = member.name
     %a.info__edit-btn.info__float-right
       Edit
   .textArea
