@@ -13,7 +13,7 @@ $(function() {
         e.preventDefault();
         var formData = new FormData(this);
         $.ajax({
-          url: url,
+          url: $(this).attr('action'),
           type: "POST",
           data: formData,
           dataType: 'json',
@@ -21,7 +21,7 @@ $(function() {
           contentType: false
         });
 
-        done(function(data) {
+        .done(function(data) {
           var html = buildHTML(data);
           $('.messages').append(html)
           // $('.textbox').val('')
