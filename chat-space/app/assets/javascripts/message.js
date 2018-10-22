@@ -1,10 +1,46 @@
 $(function() {
-      // function buildHTML(message) {
-      //   // var html = "<%= render :partial => 'message' %>"
-      //   // var html = "<h1>test</h1>"
-      //   var html = ""
-      //   return html;
-      // };
+      function buildHTML(message) {
+        // var html = `<%= render :partial => 'message' %>`;
+        // var html = "<h1>test</h1>"
+        console.log(message);
+        console.log(message.message.user);
+        console.log(message.message.user.name);
+        console.log(message.message.created_at);
+        console.log(message.message.text);
+        console.log(message.message.image);
+        console.log(message.message);
+        var user_name = message.message.user.name;
+        var post_time = message.message.created_at;
+        var content_text = ``;
+        var content_image = ``;
+        if(message.message.text){
+          content_text = `
+          <p class="textArea__message">
+            ${message.message.text}
+          </p>
+          `;
+        }
+
+        if(message.message.image){
+          content_image = `<img href="message.image.url" class="textArea__image">`;
+        }
+
+        var html = `
+          <div class="textArea_box">
+            <div class="textArea__user">
+              <h3 class="textArea__name">
+                ${user_name}
+                <span class="textArea__timestamp">
+                  ${post_time}
+                </span>
+              </h3>
+              ${content_text}
+              ${content_image}
+            </div>
+          </div>`
+        ;
+        return html;
+      };
 
       // $(function(){
       // setInterval(update, 10000);
@@ -25,8 +61,10 @@ $(function() {
         .done(function(data){
           console.log($('.textArea')[0].scrollHeight);
           console.log('done1');
-          // var html = buildHTML(data);
-          var html = "<%= escape_javascript render (:partial => 'message') %>" ;
+          // console.log(@message);
+          var html = buildHTML(data);
+          // var html = '<%= escape_javascript render :partial => "message", locals:{message: ${message}} %>';
+          //部分テンプレートを使用して簡略化しようと思ったが、なぜかうまくいかない…
           console.log(html);
           // $('.messages').append(html)これは間違い。
           $('.textArea').append(html);
