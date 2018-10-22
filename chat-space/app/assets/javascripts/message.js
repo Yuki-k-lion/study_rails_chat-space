@@ -61,9 +61,10 @@ $(function() {
         .done(function(data){
           console.log($('.textArea')[0].scrollHeight);
           console.log('done1');
+          // console.log(data.message);
           // console.log(@message);
           var html = buildHTML(data);
-          // var html = '<%= escape_javascript render :partial => "message", locals:{message: ${message}} %>';
+          // var html = `<%= escape_javascript render :partial => "message", locals:{message: ${data.message}} %>`;
           //部分テンプレートを使用して簡略化しようと思ったが、なぜかうまくいかない…
           console.log(html);
           // $('.messages').append(html)これは間違い。
