@@ -73,7 +73,12 @@ $(function() {
           // $('.textArea').html(<%= j (render @messages) %>); 記法のエラーなのでこれ以降実行されないが、表示はうまくいく。
           // $('.textbox').val('')
           $('.sendMessage__input-text').val('');
-          // $('.textbox').reset();
+          // $('sendMessage__input-text').reset();
+          //reset reset is not a functionとなる。名前で競合
+          // $form = $($.rails.formSubmitSelector)
+          // $.rails.enableFormElements($form)
+          // $form.reset();
+          $('.sendMessage__input-btn').prop('disabled', false);
           $('.textArea').animate({scrollTop: $('.textArea')[0].scrollHeight}, 'fast');
           console.log('done');
         })
