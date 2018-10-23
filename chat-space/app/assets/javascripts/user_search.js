@@ -24,6 +24,7 @@ $(document).on('turbolinks:load', function(){ //リロードしなくてもjsが
     e.preventDefault(); //キャンセル可能なイベントをキャンセル
     var input = $.trim($(this).val()); //この要素に入力された語句を取得し($(this).val())、前後の不要な空白を取り除いた($.trim(...);)上でinputという変数に(var input =)代入
     console.log(input);
+
     $.ajax({ //ajax通信で以下のことを行います
      url: '/users', //urlを指定
      type: 'GET', //メソッドを指定
@@ -36,9 +37,10 @@ $(document).on('turbolinks:load', function(){ //リロードしなくてもjsが
      console.log('done');
      console.log(data);
     $('.chat-group-user').remove();
-
-    builtHTMLUser(data)
-    console.log('built done');
+    if(data.length !== 0){
+      builtHTMLUser(data)
+      console.log('built done');
+    };
 
    })
    .fail(function(XMLHttpRequest,textStatus,errorThrown){
