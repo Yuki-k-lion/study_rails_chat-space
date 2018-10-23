@@ -1,7 +1,7 @@
 //参考[https://qiita.com/yuki-n/items/fdc5f7d5ac2f128221d1]
 
-$(document).on('turbolinks:load', function(){ //リロードしなくてもjsが動くようにする
-
+// $(document).on('turbolinks:load', function(){
+$(function () {
   var search_user_list = $("#user-search-result");
   console.log('search_use_list');
   console.log(search_user_list);
@@ -29,13 +29,12 @@ $(document).on('turbolinks:load', function(){ //リロードしなくてもjsが
     search_user_list.append(html);
   }
 
-
-  $(document).on('keyup', '#user-search-field', function(e){ //このアプリケーション(document)の、user-search-fieldというid('#user-search-field')で、キーボードが押され指が離れた瞬間(.on('keyup'...))、eという引数を取って以下のことをしなさい(function(e))
-    e.preventDefault(); //キャンセル可能なイベントをキャンセル
-    var input = $.trim($(this).val()); //この要素に入力された語句を取得し($(this).val())、前後の不要な空白を取り除いた($.trim(...);)上でinputという変数に(var input =)代入
+  $(document).on('keyup', '#user-search-field', function(e){
+    e.preventDefault();
+    var input = $.trim($(this).val()); //前後の不要な空白を取り除いた($.trim(...);)上でinputという変数に(var input =)代入
     console.log(input);
 
-    $.ajax({ //ajax通信で以下のことを行います
+    $.ajax({
      url: '/users', //urlを指定
      type: 'GET', //メソッドを指定
      data: ('keyword=' + input), //コントローラーに渡すデータを'keyword=input(入力された文字)'にするように指定
@@ -43,7 +42,7 @@ $(document).on('turbolinks:load', function(){ //リロードしなくてもjsが
      contentType: false,
      dataType: 'json' //データ形式を指定
    })
-   .done(function(data){ //データを受け取ることに成功したら、dataを引数に取って以下のことする(dataには@usersが入っている状態ですね)
+   .done(function(data){
      console.log('done');
      console.log(data);
 
@@ -56,7 +55,6 @@ $(document).on('turbolinks:load', function(){ //リロードしなくてもjsが
       builtHTML_noUser();
       console.log('nouser built done');
     };
-
    })
    .fail(function(XMLHttpRequest,textStatus,errorThrown){
      alert('error');
