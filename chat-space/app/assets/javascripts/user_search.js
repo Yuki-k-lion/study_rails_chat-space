@@ -1,6 +1,3 @@
-//参考[https://qiita.com/yuki-n/items/fdc5f7d5ac2f128221d1]
-
-// $(document).on('turbolinks:load', function(){
 $(function () {
   var search_user_list = $("#user-search-result");
   console.log('search_use_list');
@@ -31,23 +28,21 @@ $(function () {
 
   $(document).on('keyup', '#user-search-field', function(e){
     e.preventDefault();
-    var input = $.trim($(this).val()); //前後の不要な空白を取り除いた($.trim(...);)上でinputという変数に(var input =)代入
+    var input = $.trim($(this).val());
     console.log(input);
 
     $.ajax({
-     url: '/users', //urlを指定
-     type: 'GET', //メソッドを指定
-     data: ('keyword=' + input), //コントローラーに渡すデータを'keyword=input(入力された文字)'にするように指定
+     url: '/users',
+     type: 'GET',
+     data: ('keyword=' + input),
      processData: false,
      contentType: false,
-     dataType: 'json' //データ形式を指定
+     dataType: 'json'
    })
    .done(function(data){
      console.log('done');
      console.log(data);
-
     $('.chat-group-user').remove();
-
     if(data.length !== 0){
       builtHTMLUser(data);
       console.log('user list built done');

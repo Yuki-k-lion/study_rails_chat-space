@@ -1,7 +1,5 @@
 $(function () {
-
   var group_member_list = $("#chat-group-users");
-
    function buildHTMLGroup(user_id, user_name) {
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${ user_id }'>
                   <input name='group[user_ids][]' type='hidden' value='${ user_id }'>
@@ -10,8 +8,6 @@ $(function () {
                 </div>`
     group_member_list.append(html)
   }
-
-
   $("#user-search-result").on("click", ".user-search-add", function(){
     console.log('onclick');
       var user_name = $(this).attr("data-user-name");
@@ -19,10 +15,8 @@ $(function () {
       buildHTMLGroup(user_id, user_name);
       $(this).parent().remove();
     });
-
   $("#chat-group-users").on("click", ".user-search-remove", function(){
     console.log('delete');
     $(this).parent().remove();
   });
-
 });
