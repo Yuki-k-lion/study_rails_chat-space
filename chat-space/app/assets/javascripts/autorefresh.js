@@ -39,7 +39,9 @@ $(function() {
        url: location.href,
        type: "GET",
        data: {message: { id: message_id }},
-       dataType: 'json'
+       dataType: 'json',
+       // processData: false,
+       // contentType: false
      })
      .done(function(data){
        $.each(data, function(i, data){
@@ -50,9 +52,12 @@ $(function() {
       console.log(XMLHttpRequest.status);
       console.log(textStatus);
       console.log(errorThrown);
+      console.log("message_id:" + message_id);
     })
      .always(function(data){
         console.log('interval always log');
+        console.log(data);
+        console.log(data.new_message);
       });
    };
   $(function(){
