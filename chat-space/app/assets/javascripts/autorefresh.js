@@ -1,6 +1,7 @@
 $(function() {
   function buildHTMLupdate(message) {
-    var user_name = message.user.name;
+    console.log(message);
+    var user_name = message.name;
     var post_time = message.created_at;
     var content_text = ``;
     var content_image = ``;
