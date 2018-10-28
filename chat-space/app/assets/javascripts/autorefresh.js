@@ -44,7 +44,9 @@ $(function() {
      })
      .done(function(data){
        $.each(data, function(i, data){
-         buildHTMLupdate(data);
+         var html = buildHTMLupdate(data);
+         $('.textArea').append(html);
+         $('.textArea').animate({scrollTop: $('.textArea')[0].scrollHeight}, 'slow');
        });
      })
     .fail(function(XMLHttpRequest,textStatus,errorThrown){
