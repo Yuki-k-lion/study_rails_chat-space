@@ -6,9 +6,7 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
     respond_to do |format|
      format.html
-     format.json { @new_message = @group.messages.includes(:user).where('id > ?', params[:message][:id]) }
-     # json形式でアクセスがあった場合は、params[:message][:id]よりも大きいidがないかMessageから検索して、@new_messageに代入する
-     # binding.pry
+     format.json { @new_message = @group.messages.includes(:user).where('id > ?', params[:message][:id])}
    end
   end
 

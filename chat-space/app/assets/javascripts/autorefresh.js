@@ -58,4 +58,4 @@ $(function() {
   $(function(){
      setInterval(update, 5000);
    });
-};
+});
