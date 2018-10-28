@@ -4,7 +4,11 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    # binding.pry
+    respond_to do |format|
+     format.html
+     format.json { @new_message = @group.messages.includes(:user).where('id > ?', params[:message][:id]) }
+     # json形式でアクセスがあった場合は、params[:message][:id]よりも大きいidがないかMessageから検索して、@new_messageに代入する
+   end
   end
 
   def create

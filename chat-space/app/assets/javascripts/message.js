@@ -1,16 +1,17 @@
 $(function() {
       function buildHTML(message) {
-        var user_name = message.message.user.name;
-        var post_time = message.message.created_at;
+        var user_name = message.user.name;
+        var post_time = message.created_at;
         var content_text = ``;
         var content_image = ``;
-        if(message.message.text){
+        var message_id = message.id;
+        if(message.text){
           content_text = `
           <p class="textArea__message">
-            ${message.message.text}
+            ${message.text}
           </p>`;
         };
-        if(message.message.image){
+        if(message.image){
           content_image = `<img href="message.image.url" class="textArea__image">`;
         };
         var html = `
@@ -18,7 +19,7 @@ $(function() {
             <div class="textArea__user">
               <h3 class="textArea__name">
                 ${user_name}
-                <span class="textArea__timestamp">
+                <span class="textArea__timestamp" data-id="${message_id}">
                   ${post_time}
                 </span>
               </h3>
@@ -39,6 +40,11 @@ $(function() {
            },
            dataType: 'json'
          })
+         .always(function(data){ //通信したら、成功しようがしまいが受け取ったデータ（@new_message)を引数にとって以下のことを行う
+            $.each(data, function(i, data){ //'data'を'data'に代入してeachで回す
+              buildHTML(data); 
+            });
+          });
        };
  // setInterval(function() {
  //        // var formData = new FormData(this);
