@@ -5,7 +5,7 @@
       %span.textArea__timestamp
         = message.created_at
     - if message.content.present?
-      %p.textArea__message{ data: { id: '#{message.id}' } }
+      %p.textArea__message{ data: { id: "#{message.id}" } }
         = message.content
     - if message.image.present?
       = image_tag message.image.url, class: 'textArea__image'

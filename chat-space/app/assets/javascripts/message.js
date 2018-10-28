@@ -1,5 +1,35 @@
 $(function() {
       function buildHTML(message) {
+        var user_name = message.message.user.name;
+        var post_time = message.message.created_at;
+        var content_text = ``;
+        var content_image = ``;
+        var message_id = message.message.id;
+        if(message.message.text){
+          content_text = `
+          <p class="textArea__message">
+            ${message.message.text}
+          </p>`;
+        };
+        if(message.message.image){
+          content_image = `<img href="message.image.url" class="textArea__image">`;
+        };
+        var html = `
+          <div class="textArea_box">
+            <div class="textArea__user">
+              <h3 class="textArea__name">
+                ${user_name}
+                <span class="textArea__timestamp" data-id="${message_id}">
+                  ${post_time}
+                </span>
+              </h3>
+              ${content_text}
+              ${content_image}
+            </div>
+          </div>`;
+        return html;
+      };
+      function buildHTMLupdate(message) {
         var user_name = message.user.name;
         var post_time = message.created_at;
         var content_text = ``;
@@ -29,25 +59,33 @@ $(function() {
           </div>`;
         return html;
       };
+
        function update(){
         if($('.textArea__message')[0]){
          var message_id = $('.textArea__message:last').data('id');
          //一番最後にある'.textArea__message'というクラスの'id'というデータ属性を取得し、'message_id'という変数に代入
        }else {
          var message_id = 0;
-       }
+       };
          $.ajax({
            url: location.href,
-           type: 'GET',
-           data: {
-             message: { id: message_id } //'id'には'message_id'を入れる
-           },
+           type: "GET",
+           data: {message: { id: message_id }},
            dataType: 'json'
          })
-         .always(function(data){ //通信したら、成功しようがしまいが受け取ったデータ（@new_message)を引数にとって以下のことを行う
-            $.each(data, function(i, data){ //'data'を'data'に代入してeachで回す
-              buildHTML(data);
-            });
+         .done(function(data){
+           $.each(data, function(i, data){
+             buildHTMLupdate(data);
+           });
+         })
+        .fail(function(XMLHttpRequest,textStatus,errorThrown){
+          // alert('error');
+          console.log(XMLHttpRequest.status);
+          console.log(textStatus);
+          console.log(errorThrown);
+        })
+         .always(function(data){
+            console.log('interval always log');
           });
        };
  // setInterval(function() {
