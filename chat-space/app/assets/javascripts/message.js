@@ -30,8 +30,12 @@ $(function() {
         return html;
       };
        function update(){
+        if($('.textArea__message')[0]){
          var message_id = $('.textArea__message:last').data('id');
          //一番最後にある'.textArea__message'というクラスの'id'というデータ属性を取得し、'message_id'という変数に代入
+       }else {
+         var message_id = 0;
+       }
          $.ajax({
            url: location.href,
            type: 'GET',
@@ -42,7 +46,7 @@ $(function() {
          })
          .always(function(data){ //通信したら、成功しようがしまいが受け取ったデータ（@new_message)を引数にとって以下のことを行う
             $.each(data, function(i, data){ //'data'を'data'に代入してeachで回す
-              buildHTML(data); 
+              buildHTML(data);
             });
           });
        };
