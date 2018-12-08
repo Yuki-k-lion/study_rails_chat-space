@@ -3,8 +3,8 @@ jobs:
   build:
     parallelism: 3
     working_directory: ~/chat-space
-
-
+    machine: true
+    
 # # Ruby CircleCI 2.0 configuration file
 # #
 # # Check https://circleci.com/docs/2.0/language-ruby/ for more details
