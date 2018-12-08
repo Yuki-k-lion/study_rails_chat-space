@@ -7,6 +7,8 @@
     width: 300px;
     height: 100vh;
     //vh vwという単位を使うと view に対して何パーセントの幅かを決定できる。
+    overflow: scroll;
+    //スクロールする。
       &__user{
         background-color: #253141;
         padding: 35px 20px;
