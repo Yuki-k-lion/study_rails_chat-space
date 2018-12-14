@@ -2,18 +2,9 @@ $(function() {
       function buildHTML(message) {
         var user_name = message.message.user.name;
         var post_time = message.message.created_at;
-        var content_text = ``;
-        var content_image = ``;
+        var content_text = ``, content_image = ``;
         var message_id = message.message.id;
-        if(message.message.text){
-          content_text = `
-          <p class="textArea__message">
-            ${message.message.text}
-          </p>`;
-        };
-        if(message.message.image){
-          content_image = `<img href="message.image.url" class="textArea__image">`;
-        };
+        (message.message.text)? content_text = `<p class="textArea__message">${message.message.text}</p>`:content_image = `<img href="message.image.url" class="textArea__image">`;
         var html = `
           <div class="textArea_box">
             <div class="textArea__user">
@@ -41,7 +32,6 @@ $(function() {
           contentType: false
         })
         .done(function(data){
-          console.log(data);
           var html = buildHTML(data);
           $('.textArea').append(html);
           $('.sendMessage__input-text').val('');
@@ -55,8 +45,6 @@ $(function() {
           console.log(textStatus);
           console.log(errorThrown);
         })
-        .always(function(){
-          console.log('always log');
-        });
+        .always(function(){console.log('always log');});
       });
 });
