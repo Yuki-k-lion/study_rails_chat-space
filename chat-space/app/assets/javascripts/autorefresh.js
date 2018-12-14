@@ -1,20 +1,8 @@
 $(function() {
   function buildHTMLupdate(message) {
     console.log(message);
-    var user_name = message.name;
-    var post_time = message.created_at;
-    var content_text = ``;
-    var content_image = ``;
-    var message_id = message.id;
-    if(message.text){
-      content_text = `
-      <p class="textArea__message">
-        ${message.text}
-      </p>`;
-    };
-    if(message.image){
-      content_image = `<img href="message.image.url" class="textArea__image">`;
-    };
+    var user_name = message.name, post_time = message.created_at, content_text = ``, content_image = ``, message_id = message.id;
+    (message.text)? {content_text = `<p class="textArea__message">${message.text}</p>`:content_image = `<img href="message.image.url" class="textArea__image">`;
     var html = `
       <div class="textArea_box">
         <div class="textArea__user">
@@ -31,11 +19,7 @@ $(function() {
     return html;
   };
    function update(){
-    if($('.textArea__message')[0]){
-     var message_id = $('.textArea__message:last').data('id');
-   }else {
-     var message_id = 0;
-   };
+   ($('.textArea__message')[0]) ? var message_id = $('.textArea__message:last').data('id'): var message_id = 0;
      $.ajax({
        url: location.href,
        type: "GET",
