@@ -1,6 +1,5 @@
 $(function() {
   function buildHTMLupdate(message) {
-    console.log(message);
     var user_name = message.name, post_time = message.created_at, content_text = ``, content_image = ``, message_id = message.id;
     (message.text)? {content_text = `<p class="textArea__message">${message.text}</p>`:content_image = `<img href="message.image.url" class="textArea__image">`;
     var html = `
@@ -38,11 +37,7 @@ $(function() {
       console.log(textStatus);
       console.log(errorThrown);
     })
-     .always(function(data){
-        console.log('interval always log');
-      });
+     .always(function(data){console.log('interval always log');});
    };
-  $(function(){
-     setInterval(update, 5000);
-   });
+  $(function(){setInterval(update, 5000);});
 });
