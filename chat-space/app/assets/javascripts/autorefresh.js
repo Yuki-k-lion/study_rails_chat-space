@@ -19,11 +19,11 @@ $(function() {
     return html;
   };
    function update(){
-   ($('.textArea__message')[0]) ? var message_id = $('.textArea__message:last').data('id'): var message_id = 0;
+   ($('.textArea__message')[0]) ? var latestMessageId = $('.textArea__message:last').data('id'): var latestMessageId = 0;
      $.ajax({
        url: location.href,
        type: "GET",
-       data: {message: { id: message_id }},
+       data: {message: { id: latestMessageId }},
        dataType: 'json',
      })
      .done(function(data){
