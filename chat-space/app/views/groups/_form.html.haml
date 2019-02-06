@@ -30,3 +30,6 @@
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
+    = link_to root_path do
+      .chat-group-form__field--right
+        = f.submit 'Exit', class: 'chat-group-form__action-btn'
